@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 11:25:49 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/16 13:17:11 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/17 10:36:42 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
+int		ft_atoi(const char *nptr);
 
 #endif
