@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 12:07:36 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 11:02:11 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/17 12:48:22 by idsy              #+#    #+#             */
+/*   Updated: 2019/04/17 12:48:47 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*ss1;
-	char	*ss2;
-
-	while (*ss1 && *ss2 && *ss1++ == *ss2++ && n)
-		n--;
-	return (*ss1 - *ss2);
+    write(fd, &c, 1);
 }

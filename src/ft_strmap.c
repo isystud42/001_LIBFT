@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 12:07:36 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 11:02:11 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/17 10:52:39 by idsy              #+#    #+#             */
+/*   Updated: 2019/04/17 11:07:19 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*ss1;
-	char	*ss2;
+	size_t	len;
+	char	*map;
+	char	*ss;
 
-	while (*ss1 && *ss2 && *ss1++ == *ss2++ && n)
-		n--;
-	return (*ss1 - *ss2);
+	ss = s;
+	len = ft_strlen(ss);
+	if (!(map = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (*ss)
+		*map++ = f(*ss++);		
+	*map = '\0';
+	return (map);
 }
