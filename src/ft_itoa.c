@@ -6,13 +6,13 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 12:36:06 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/19 10:50:14 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:06:33 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_count_nblen(long n)
+static	int		ft_count_len(long n)
 {
 	int	count;
 

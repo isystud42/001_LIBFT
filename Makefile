@@ -6,7 +6,7 @@
 #    By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/19 11:41:03 by idsy              #+#    #+#              #
-#    Updated: 2019/04/19 11:43:51 by idsy             ###   ########.fr        #
+#    Updated: 2019/04/19 12:05:36 by idsy             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ SRCS_FILES = ft_isalnum.c ft_bzero.c ft_isascii.c ft_isalpha.c ft_isdigit.c ft_i
 			ft_strjoin.c ft_strmap.c ft_strncat.c ft_strmapi.c ft_strncmp.c ft_strncpy.c\
 			ft_strnequ.c ft_strnew.c ft_strrchr.c ft_strstr.c ft_strsub.c ft_strnstr.c\
 			ft_tolower.c ft_toupper.c ft_strtrim.c ft_strsplit.c
-SRCS_PATH = ./src
-INCLUDES_PATH = ./includes
-OBJ_FILES_PATH = ./objs
-OBJS_FILES = $(SRC:.c=.o)
+SRCS_PATH = src/
+INCLUDES_PATH = includes/
+OBJ_FILES_PATH = objs/
+OBJS_FILES = $(SRCS_FILES:.c=.o)
 HEADER_LIB_NAME = libft.h
 
 #COMP INFOS
@@ -32,13 +32,12 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 #VAR
-SRCS = $(addprefix ($(SRCS_PATHS),$(SRCS_FILES)))
-OBJS = $(addprefix ($(OBJ_FILES_PATH), $(SRCS %.c = %.o)))
-INC = $(addprefix ($(INCLUDES_PATH), $(HEADER_LIB_NAME)))
+SRCS = $(addprefix $(SRCS_PATH),$(SRCS_FILES))
+OBJS = $(addprefix $(OBJ_FILES_PATH),$(OBJS_FILES))
+INC = $(addprefix -I,$(INCLUDES_PATH))
 
 
 #RULES
-
 all : $(NAME)
 
 $(NAME) : $(OBJS)
@@ -47,7 +46,7 @@ $(NAME) : $(OBJS)
 
 $(OBJ_FILES_PATH)%.o : $(SRCS_PATH)%.c
 	@mkdir -p $(OBJ_FILES_PATH)
-	@$(CC) $(FLAGS) -o $@ -c $<
+	@$(CC) $(FLAGS) $(INC) -o $@ -c $<
 
 clean :
 	@rm -rf $(OBJ_FILES_PATH)

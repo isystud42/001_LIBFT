@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 11:40:10 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/16 13:23:39 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:06:17 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	tmp = (unsigned char *)s;
 	while (n--)
 	{
-		if (*tmp == (unsigned char *)c)
+		if (*tmp == (unsigned char)c)
 			return (tmp);
 		tmp++;
 	}

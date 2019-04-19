@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 10:59:29 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/16 13:22:10 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:41:31 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*((char *)dest + i) = *((char *)src + 1);
+		*((char *)dest + i) = *((char *)src + i);
 		i++;
 	}
 	return (dest);

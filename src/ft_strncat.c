@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 17:55:33 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/15 17:57:56 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:40:40 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	char	*tmp;
+	char	*ssrc;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[i] && j < n)
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
+	tmp = dest;
+	ssrc = (char *)src;
+	while (*tmp)
+		tmp++;
+	while (*ssrc && n--)
+		*tmp++ = *ssrc++;
+	*tmp = '\0';
 	return (dest);
 }

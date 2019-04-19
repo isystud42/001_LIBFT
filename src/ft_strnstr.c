@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 10:47:13 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/16 13:17:29 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:51:25 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!(*needle))
+	if (needle[0] == '\0')
 		return ((char *)haystack);
 	while (haystack[i] && i < n)
 	{

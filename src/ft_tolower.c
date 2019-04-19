@@ -6,13 +6,13 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 12:33:47 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/16 12:35:56 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:13:39 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + ('a' - 'A'));

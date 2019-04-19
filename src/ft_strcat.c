@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 17:42:00 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 11:04:53 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 12:36:02 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ char	*ft_strcat(char *dest, const char *src)
 	char	*ssrc;
 
 	tmp = dest;
-	ssrc = src;
+	ssrc = (char *)src;
 	while (*tmp)
 		tmp++;
 	while (*ssrc)
-	{
-		*tmp = *ssrc;
-		tmp++;
-		ssrc++;
-	}
+		*tmp++ = *ssrc++;
+	*tmp = '\0';
 	return (dest);
 }
