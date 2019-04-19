@@ -6,15 +6,15 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 12:42:38 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 12:43:14 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 10:48:57 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-	int             i;
+	int	i;
 
 	i = 0;
 	while (s[i])

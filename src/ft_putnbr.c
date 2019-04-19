@@ -6,13 +6,17 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 12:43:43 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 12:44:54 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 10:47:57 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putnbr(int n)
+/*
+**	LE +48 sert a convertir un chiffre en son correspondant ascii (man ascii)
+*/
+
+void	ft_putnbr(int n)
 {
 	if (n < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 10:52:39 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 11:07:19 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 10:45:54 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!(map = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (*ss)
-		*map++ = f(*ss++);		
+		*map++ = f(*ss++);
 	*map = '\0';
 	return (map);
 }

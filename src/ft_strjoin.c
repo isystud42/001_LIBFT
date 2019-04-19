@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 11:36:38 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/17 11:57:51 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/19 10:47:22 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ss1;
 	char	*ss2;
-	size_t		len;
+	size_t	len;
 	char	*join;
 
 	ss1 = (char *)s1;
