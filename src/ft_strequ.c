@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 11:14:12 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/19 12:08:14 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/22 10:49:13 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_strequ(char const *s1, char const *s2)
 	char	*ss1;
 	char	*ss2;
 
+	if (!(s1 && s2))
+		return (2);
 	ss1 = (char *)s1;
 	ss2 = (char *)s2;
 	while (*ss1 && *ss1 == *ss2)

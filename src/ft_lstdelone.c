@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 10:52:39 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/22 10:46:45 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/22 11:38:01 by idsy              #+#    #+#             */
+/*   Updated: 2019/04/22 12:46:35 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	i;
-	char	*ss;
-	char	*map;
-	char	*copy;
-
-	i = 0;
-	if (s && f)
-	{
-		ss = (char *)s;
-		while (s[i])
-			i++;
-		if (!(map = (char *)malloc(sizeof(char) * (i + 1))))
-			return (NULL);
-		copy = map;
-		while (*ss)
-			*copy++ = f(*ss++);
-		*copy = '\0';
-		return (map);
-	}
-	return (NULL);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

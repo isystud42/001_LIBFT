@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 11:10:05 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/22 10:47:28 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/22 11:27:30 by idsy              #+#    #+#             */
+/*   Updated: 2019/04/22 12:06:45 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	len;
-	char	*mapi;
-	char	*ss;
-	char	*copy;
+	t_list	*new;
 
-	if (!(s && f))
+	if (!(new = malloc(sizeof(t_list))))
 		return (NULL);
-	ss = (char *)s;
-	len = ft_strlen(ss);
-	if (!(mapi = malloc(sizeof(char) * (len + 1))))
+	if (!content)
+	{
+		new->content = NULL;
+		new->content_size = 0;
+		new->next = NULL;
+		return (new);
+	}
+	if (!(new->content = malloc(sizeof(content) * content_size)))
+	{
+		free(new);
 		return (NULL);
-	copy = mapi;
-	len = 0;
-	while (*ss)
-		*copy++ = f(len++, *ss++);
-	*copy = '\0';
-	return (mapi);
+	}
+	ft_memcpy(new->content, content, content_size);
+	new->content_size = content_size;
+	new->next = NULL;
+	return (new);
 }

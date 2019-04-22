@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 10:44:21 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/19 10:44:22 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/22 10:52:49 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	words = ft_word_count((char*)s, c);
 	if (!(tab = (char**)malloc(sizeof(char*) * words)))
 		return (NULL);

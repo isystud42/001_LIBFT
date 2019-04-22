@@ -6,18 +6,18 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 10:47:13 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/19 12:51:25 by idsy             ###   ########.fr       */
+/*   Updated: 2019/04/22 10:39:35 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_check(const char *s1, const char *s2, size_t i, size_t n)
+static int	ft_check_stack(const char *s1, const char *s2, size_t i, size_t n)
 {
 	size_t	j;
 
 	j = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (s1[i] && s2[j] && i < n)
 	{
 		if (s1[i] != s2[j])
 			return (0);
@@ -36,13 +36,13 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 	i = 0;
 	if (needle[0] == '\0')
-		return ((char *)haystack);
+		return ((char*)haystack);
 	while (haystack[i] && i < n)
 	{
 		if (haystack[i] == needle[0])
 		{
-			if (ft_check(haystack, needle, i, n) == 1)
-				return ((char *)&haystack[i]);
+			if (ft_check_stack(haystack, needle, i, n) == 1)
+				return ((char*)&haystack[i]);
 		}
 		i++;
 	}
