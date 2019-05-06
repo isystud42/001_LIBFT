@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_listadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 10:48:52 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/24 11:26:56 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/24 11:49:08 by idsy              #+#    #+#             */
+/*   Updated: 2019/05/06 10:32:22 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	unsigned int	i;
+/*
+** Basically ft_lstadd but in a structure more usable and usefull with a prev
+*/
 
-	i = 0;
-	if (s && f)
+void	ft_listadd(t_lst **alst, t_lst *new)
+{
+	if (alst && new)
 	{
-		while (*s)
-			f(i++, s++);
+		new->next = *alst;
+		new->prev = NULL;
+		*alst = new;
 	}
 }

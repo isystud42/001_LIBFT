@@ -6,7 +6,7 @@
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 11:25:49 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/22 12:51:26 by idsy             ###   ########.fr       */
+/*   Updated: 2019/05/06 11:09:10 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_lst
+{
+	void			*content;
+	size_t			content_size;
+	struct s_lst	*prev;
+	struct s_lst	*next;
+}					t_lst;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_bzero(void *s, size_t n);
@@ -81,5 +89,12 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_ptrswap(void **ptr1, void **ptr2);
+char				*ft_strjoin_free(char *s1, char *s2);
+char				*ft_strrealloc(char **str, size_t new_size);
+void				ft_listadd(t_lst **alst, t_lst *new);
+int					ft_atoi_base(char *s, int base_size);
+size_t				ft_is_bigger(size_t a, size_t b);
+size_t				ft_is_smaller(size_t a, size_t b);
 
 #endif

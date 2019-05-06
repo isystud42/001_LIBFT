@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_is_smaller.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 10:48:52 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/24 11:26:56 by idsy             ###   ########.fr       */
+/*   Created: 2019/05/06 10:54:58 by idsy              #+#    #+#             */
+/*   Updated: 2019/05/06 11:11:04 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	unsigned int	i;
+/*
+** Size contest between 2 numbers... Yeah childish, but useful i swear.
+** b has an advantage tho.
+*/
 
-	i = 0;
-	if (s && f)
-	{
-		while (*s)
-			f(i++, s++);
-	}
+size_t	ft_is_smaller(size_t a, size_t b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
 }

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idsy <idsy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 10:48:52 by idsy              #+#    #+#             */
-/*   Updated: 2019/04/24 11:26:56 by idsy             ###   ########.fr       */
+/*   Created: 2019/04/24 10:05:20 by idsy              #+#    #+#             */
+/*   Updated: 2019/05/06 11:15:25 by idsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	unsigned int	i;
+/*
+** Gimme a string adress, i will resize it for you with fresh memory <3
+*/
 
-	i = 0;
-	if (s && f)
+char	*ft_strrealloc(char **str, size_t new_size)
+{
+	char	*new_str;
+	char	*tmp;
+	char	*save;
+
+	if (!(new_str = malloc(sizeof(char) * new_size + 1)))
+		return (NULL);
+	tmp = new_str;
+	save = *str;
+	while (tmp - new_str < (long)new_size)
 	{
-		while (*s)
-			f(i++, s++);
+		if (*str)
+			*tmp++ = *save++;
+		else
+			*tmp++ = '\0';
 	}
+	*tmp = '\0';
+	free(*str);
+	return (new_str);
 }
